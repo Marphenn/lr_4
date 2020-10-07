@@ -67,7 +67,7 @@ public:
 };
 
 
-class ManCity : private BPL
+class ManCity : public BPL
 {
 private:
 	string coach;
@@ -84,7 +84,7 @@ public:
 };
 
 
-class BorussiaD : private Bundesliga
+class BorussiaD : public Bundesliga
 {
 private:
 	string coach;
@@ -101,7 +101,7 @@ public:
 };
 
 
-class TransferPlayer : private ManCity, private BorussiaD
+class TransferPlayer : public ManCity, public BorussiaD
 {
 private:
 	string p_name;
