@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 
 using namespace std;
 
@@ -8,12 +8,7 @@ private:
 	int m_duration;
 	int n_players;
 	int substitutions;
-	void f_rules_menu();
-	void set_m_duration();
-	void set_n_players();
-	void set_max_substitutions();
-protected:
-	int choice(int);
+	
 public:
 	Football()
 		: m_duration(90), n_players(11), substitutions(3)
@@ -26,14 +21,14 @@ public:
 };
 
 
-class BPL : public virtual Football
+class BPL : virtual public Football
 {
 private:
 	const char* country;
 	int n_teams;
 	int n_tours;
 public:
-	BPL(int teams = 20, int tours = 38)
+	BPL(int teams=20, int tours=38)
 		: country("England"), n_teams(teams), n_tours(tours)
 	{
 		//setRules();
@@ -42,11 +37,11 @@ public:
 	{
 		cout << "\nBPL destroyed.\n";
 	}
-	void getInfo();
+	void BPLInfo();
 };
 
 
-class Bundesliga : public virtual Football
+class Bundesliga : virtual public Football
 {
 private:
 	const char* country;
@@ -54,7 +49,7 @@ private:
 	int n_tours;
 public:
 
-	Bundesliga(int teams = 18, int tours = 34)
+	Bundesliga(int teams=18, int tours=34)
 		: country("Germany"), n_teams(teams), n_tours(tours)
 	{
 		//setRules();
@@ -63,7 +58,7 @@ public:
 	{
 		cout << "\nBundesliga destroyed.\n";
 	}
-	void getInfo();
+	void BundesInfo();
 };
 
 
@@ -80,7 +75,7 @@ public:
 	{
 		cout << "\nManchester City destroyed.\n";
 	}
-	void getInfo();
+	void ManCityInfo();
 };
 
 
@@ -97,7 +92,7 @@ public:
 	{
 		cout << "\nBorussia Dortmund destroyed.\n";
 	}
-	void getInfo();
+	void BorDInfo();
 };
 
 
